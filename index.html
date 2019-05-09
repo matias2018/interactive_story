@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    .op{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <h1>Jogo Teste</h1>
+    <h2>Opção A</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis laboriosam aperiam quas soluta eveniet quisquam?</p>
+    <p>Estás a ser assaltado. O que fazes?</p>
+
+    <button id="foges" onclick="op_a(this.id)">Foges</button>
+    <button id="entregas" onclick="op_a(this.id)">Entregas o dinheiro</button>
+    <button id="gritas" onclick="op_a(this.id)">Gritas por socorro</button>
+
+    <h2>Depois do assalto</h2>
+    <p id="foge" class="op op_foges">
+        Morreste com um tiro pelas costas
+        <hr>
+        <button>Recomeçar</button>
+    </p>
+
+    <p id="entrega" class="op op_entregas">
+        Segues a tua vida e mais pobre e sem orgulho.
+        <a href="pagina_2.html">
+            <br>
+        <button>Continuar</button></a>
+    </p>
+
+    <p id="grita" class="op op_gritas">
+        Morres a gritar como uma menina
+        <button>Recomeçar</button>
+    </p>
+
+    <script>
+     function op_a (opcao){
+        if(opcao == 'foges'){
+            var texto = document.querySelector('#foge');
+            document.getElementById("entregas").disabled = true;
+            document.getElementById("gritas").disabled = true;
+            texto.classList.remove("op");
+        } else if(opcao == 'entregas') {
+            var texto = document.querySelector('#entrega');
+            document.getElementById("foges").disabled = true;
+            document.getElementById("gritas").disabled = true;
+            texto.classList.remove("op");
+        } else {
+            var texto = document.querySelector('#grita');
+            document.getElementById("foges").disabled = true;
+            document.getElementById("entregas").disabled = true;
+            texto.classList.remove("op");
+        }
+    }
+    </script>
+</body>
+</html>
